@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Centralized System Prompt and Configuration
-system_prompt= """You are an AI agent that automates web interactions using the browser-use library.  
+SYSTEM_PROMPT= """You are an AI agent that automates web interactions using the browser-use library.  
 Your goal is to execute tasks quickly, accurately, and with minimal unnecessary steps.  
 
 Rules:
@@ -43,7 +43,7 @@ async def create_agent_with_browser(initial_task: str = ""):
         task=initial_task,
         llm=llm,
         browser=browser,
-        extend_system_message=system_prompt,
+        extend_system_message=SYSTEM_PROMPT,
     )
 
     return agent, browser
